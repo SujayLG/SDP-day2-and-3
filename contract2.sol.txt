@@ -1,0 +1,31 @@
+contract contract2 {
+    enum state { Waiting, Ready, Active}
+    state public st;
+
+    constructor() public {
+        st=state.Waiting;
+    }
+
+    function activate() public {
+        st=state.Active;
+    }
+
+    function ready() public {
+        st=state.Ready;
+    }
+
+    function waiting() public {
+        st=state.Waiting;
+    }
+
+    function isActive() public view returns(bool) {
+        return st== state.Active;
+    }
+
+    function isWait() public view returns(bool) {
+        return st == state.Waiting;
+    }
+
+    function isReady() public view returns(bool) {
+        return st == state.Ready;
+    }
